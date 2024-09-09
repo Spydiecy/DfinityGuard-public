@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "dfinityguard_backend": {
+      "main": "src/dfinityguard_backend/main.mo",
+      "type": "motoko"
+    },
+    "dfinityguard_frontend": {
+      "dependencies": [
+        "dfinityguard_backend"
+      ],
+      "source": [
+        "src/dfinityguard_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "dfinityguard_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
