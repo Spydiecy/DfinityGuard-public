@@ -9,6 +9,7 @@ dotenv.config({ path: '../../.env' });
 export default defineConfig({
   build: {
     emptyOutDir: true,
+    outDir: '../../dist/dfinityguard_frontend/',
   },
   optimizeDeps: {
     esbuildOptions: {

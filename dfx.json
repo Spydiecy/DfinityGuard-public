@@ -4,15 +4,44 @@
       "main": "src/dfinityguard_backend/main.mo",
       "type": "motoko"
     },
+    "file_management": {
+      "main": "src/file_management/main.mo",
+      "type": "motoko"
+    },
+    "notes": {
+      "main": "src/notes/main.mo",
+      "type": "motoko"
+    },
+    "photo_gallery": {
+      "main": "src/photo_gallery/main.mo",
+      "type": "motoko"
+    },
+    "task_manager": {
+      "main": "src/task_manager/main.mo",
+      "type": "motoko"
+    },
+    "calendar_manager": {
+      "main": "src/calendar_manager/main.mo",
+      "type": "motoko"
+    },
     "dfinityguard_frontend": {
       "dependencies": [
-        "dfinityguard_backend"
+        "dfinityguard_backend",
+        "file_management",
+        "notes",
+        "photo_gallery",
+        "task_manager",
+        "calendar_manager"
       ],
+      "frontend": {
+        "entrypoint": "src/dfinityguard_frontend/src/index.html"
+      },
       "source": [
-        "src/dfinityguard_frontend/dist"
+        "src/dfinityguard_frontend/assets",
+        "src/dfinityguard_frontend/src",
+        "dist/dfinityguard_frontend/"
       ],
-      "type": "assets",
-      "workspace": "dfinityguard_frontend"
+      "type": "assets"
     }
   },
   "defaults": {
