@@ -19,7 +19,7 @@ const LandingPage: React.FC = () => {
       <div className="duotone-effect">
         <Parallax
           blur={0}
-          bgImage="../../assets/hero.png"
+          bgImage="https://raw.githubusercontent.com/Spydiecy/DfinityGuard_Notes/main/src/dfinityguard_notes_frontend/assets/download.jpg"
           bgImageAlt="Secure digital world"
           strength={200}
           bgClassName="image-filter"
@@ -81,7 +81,7 @@ const LandingPage: React.FC = () => {
       <div className="duotone-effect">
         <Parallax
           blur={0}
-          bgImage="../../assets/features.png"
+          bgImage="https://raw.githubusercontent.com/Spydiecy/DfinityGuard_Notes/main/src/dfinityguard_notes_frontend/assets/features.png"
           bgImageAlt="DfinityGuard features"
           strength={200}
           bgClassName="image-filter"
