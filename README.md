@@ -2,6 +2,8 @@
 
 DfinityGuard is a decentralized productivity suite built on the Internet Computer Protocol (ICP). It offers a secure, private, and user-controlled alternative to traditional cloud-based productivity tools.
 
+https://github.com/user-attachments/assets/54fb4a68-a6d6-4360-a636-9f8158bae330
+
 ## Features
 
 - **File Management**: Securely upload, store, and retrieve files.
