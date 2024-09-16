@@ -12,7 +12,7 @@ actor UserManagement {
         firstName: Text;
         lastName: Text;
         email: Text;
-        passwordHash: Text; // In a real-world scenario, use proper password hashing
+        passwordHash: Text;
     };
 
     private stable var usersEntries : [(Text, User)] = [];
@@ -64,50 +64,7 @@ actor UserManagement {
                         passwordHash = user.passwordHash;
                     };
                     userMap.put(username, updatedUser);
-                    emailToUsername.put(email, username);
-                    #ok()
-                } else {
-                    #err("Not authorized to update this user")
-                }
-            };
-            case (null) {
-                #err("User not found")
-            };
-        }
-    };
-
-    public shared(msg) func deleteUser(username: Text) : async Result.Result<(), Text> {
-        switch (userMap.get(username)) {
-            case (?user) {
-                if (user.id == msg.caller) {
-                    userMap.delete(username);
-                    emailToUsername.delete(user.email);
-                    #ok()
-                } else {
-                    #err("Not authorized to delete this user")
-                }
-            };
-            case (null) {
-                #err("User not found")
-            };
-        }
-    };
-
-    public query func login(usernameOrEmail: Text, password: Text) : async Result.Result<User, Text> {
-        var username = usernameOrEmail;
-        
-        // If the input is an email, get the corresponding username
-        switch (emailToUsername.get(usernameOrEmail)) {
-            case (?u) { username := u; };
-            case (null) { /* Input might be a username, continue */ };
-        };
-
-        switch (userMap.get(username)) {
-            case (?user) {
-                if (user.passwordHash == password) { // In a real-world scenario, use proper password verification
-                    #ok(user)
-                } else {
-                    #err("Invalid password")
+             
                 }
             };
             case (null) {
