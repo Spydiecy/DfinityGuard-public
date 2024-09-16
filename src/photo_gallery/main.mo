@@ -9,25 +9,7 @@ import Result "mo:base/Result";
 import Text "mo:base/Text";
 import Time "mo:base/Time";
 
-actor PhotoGallery {
-    type PhotoId = Nat;
-    type UserId = Principal;
-
-    type Photo = {
-        id: PhotoId;
-        name: Text;
-        contentType: Text;
-        data: Blob;
-        owner: UserId;
-        createdAt: Int;
-    };
-
-    private func natHash(n: Nat) : Nat32 {
-        return Nat32.fromNat(n);
-    };
-
-    private stable var nextPhotoId: PhotoId = 0;
-    private stable var photosEntries : [(PhotoId, Photo)] = [];
+act
     private var photos = HashMap.HashMap<PhotoId, Photo>(1, Nat.equal, natHash);
     private var userPhotos = HashMap.HashMap<UserId, [PhotoId]>(1, Principal.equal, Principal.hash);
     private var userStorageUsage = HashMap.HashMap<UserId, Nat>(1, Principal.equal, Principal.hash);
